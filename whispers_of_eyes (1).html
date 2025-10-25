@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Whispers of Eyes</title>
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+      background: radial-gradient(circle at center, #0a0a0a 0%, #000 100%);
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      position: relative;
+      font-family: 'Georgia', serif;
+    }
+
+    .flower {
+      position: absolute;
+      width: 160px;
+      height: 160px;
+      cursor: pointer;
+      transition: transform 0.5s ease;
+    }
+
+    .flower:hover {
+      transform: scale(1.2);
+    }
+
+    #message {
+      position: absolute;
+      bottom: 15%;
+      text-align: center;
+      font-size: 24px;
+      color: white;
+      text-shadow: 
+        1px 1px 3px black, 
+        -1px -1px 3px black, 
+        0 0 12px gold, 
+        0 0 20px goldenrod;
+      opacity: 0;
+      transition: opacity 1s ease;
+      white-space: pre-line;
+    }
+  </style>
+</head>
+<body>
+  <img src="https://i.ibb.co/YTQgWrd7/2025102509143047.png" class="flower" style="top:10%; left:15%;" onclick="showMessage(0)" />
+  <img src="https://i.ibb.co/twqtPm1P/2025102509141665.png" class="flower" style="top:20%; right:10%;" onclick="showMessage(1)" />
+  <img src="https://i.ibb.co/7dQmdQBt/2025102509140223.png" class="flower" style="bottom:15%; left:20%;" onclick="showMessage(2)" />
+  <img src="https://i.ibb.co/1YQ4CVCJ/2025102509134208.png" class="flower" style="bottom:25%; right:15%;" onclick="showMessage(3)" />
+  <img src="https://i.ibb.co/20CPLTkQ/2025102509131496.png" class="flower" style="top:50%; left:45%;" onclick="showMessage(4)" />
+  <img src="https://i.ibb.co/Y4rpFs3x/2025102509125895.png" class="flower" style="top:65%; right:30%;" onclick="showMessage(5)" />
+  <img src="https://i.ibb.co/C52wfsGX/2025102509124346.png" class="flower" style="bottom:10%; left:40%;" onclick="showMessage(6)" />
+  <img src="https://i.ibb.co/k6JVfPGw/2025102509121996.png" class="flower" style="bottom:5%; right:25%;" onclick="showMessage(7)" />
+
+  <div id="message"></div>
+
+  <script>
+    const messages = [
+      "تم سا صرف تم ہی کو دیکھا",
+      "Moon or the stars?
+      - Her Eyes",
+      "تیری آنکھوں کے سوا دنیا میں رکھا کیا ہے",
+      "It's the eyes.
+It was all in her Eyes.",
+      "تیری صورت سے ہے عالم میں بہاروں کو ثبات
+    تیری آنکھوں کے سوا دنیا میں رکھا گیا",
+      "The voice of your eyes!
+It's deeper than all roses",
+      "ایسی الجھی نظر تم سے ہٹتی نہیں",
+      "What beauty can there be
+ to mention after your eyes"
+    ];
+
+    const messageElement = document.getElementById("message");
+
+    function showMessage(index) {
+      messageElement.style.opacity = 0;
+      setTimeout(() => {
+        messageElement.textContent = messages[index];
+        messageElement.style.opacity = 1;
+      }, 300);
+    }
+  </script>
+</body>
+</html>
